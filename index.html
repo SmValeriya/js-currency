@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter App Using HTML CSS & JS</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="js/countries.js"></script>
+  <script src="js/dropdown.js"></script>
+  <script src="js/converter.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="box">
+      <header class="box__header">
+        <div class="container">
+          <h1 class="box__header-text">Currency Converter</h1>
+        </div>
+      </header>
+      <div class="box__content exchange">
+        <div class="container">
+          <form class="exchange__form">
+            <div class="exchange__row">
+              <div class="exchange__col">
+                <label for="amount" class="exchange__label">Amount</label>
+                <input type="number" class="exchange__input" name="amount" id="amount" value="1">
+              </div>
+            </div>
+            <div class="exchange__row">
+              <div class="exchange__col">
+                <label for="base" class="exchange__label">From</label>
+                <select class="exchange__select" name="base" id="base" class="exchange__select"></select>
+              </div>
+            </div>
+            <div class="exchange__row">
+              <div class="exchange__col exchange__col--centered">
+                <button class="exchange__reverse" type="button">
+                  <svg width="21px" height="21px" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg"
+                    class="exchange__reverse-icon">
+                    <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"
+                      transform="translate(4 2)">
+                      <path d="m4.5 8.5-4 4 4 4" />
+                      <path d="m12.5 12.5h-12" />
+                      <path d="m8.5.5 4 4-4 4" />
+                      <path d="m12.5 4.5h-12" />
+                    </g>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="exchange__row">
+              <div class="exchange__col">
+                <label for="target" class="exchange__label">To</label>
+                <select class="exchange__select" name="target" id="target" class="exchange__select"></select>
+              </div>
+            </div>
+            <div class="exchange__row">
+              <div class="exchange__col exchange__col--centered">
+                <button type="submit" class="exchange__btn">Convert</button>
+              </div>
+            </div>
+          </form>
+          <div class="exchange__result">Getting Exchange Rate...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

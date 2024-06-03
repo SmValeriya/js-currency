@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppis, sans-serif;
+  font-weight: 400;
+  color: #2c3e50;
+  background-color: #6831de;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.box {
+  width: 95%;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.box__header {
+  text-align: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #dddddd;
+}
+
+.box__header-text {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.box__content {
+  margin: 1rem 0;
+}
+
+.exchange__form {
+  margin-bottom: 20px;
+}
+
+.exchange__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.exchange__row:last-child,
+.exchange__row:has(button) {
+  margin-bottom: 0;
+}
+
+.exchange__col {
+  width: 100%;
+}
+
+.exchange__col--centered {
+  text-align: center;
+}
+
+.exchange__label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.exchange__input,
+.exchange__select {
+  width: 100%;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 10px;
+  background-color: transparent;
+  font-family: inherit;
+  color: #2c3e50;
+  cursor: pointer;
+  border: 1px solid #2c3e50;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.exchange__input:focus,
+.exchange__input:hover,
+.exchange__select:focus,
+.exchange__select:hover {
+  border: 1px solid #2ecc71;
+}
+
+.exchange__reverse {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transform: rotate(90deg);
+  transition: all 0.3s ease;
+}
+
+.exchange__reverse-icon {
+  stroke: #2c3e50;
+}
+
+.exchange__reverse:hover .exchange__reverse-icon {
+  stroke: #2ecc71;
+}
+
+.exchange__result {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 30px 10px 10px;
+  border-top: 1px solid #dddddd;
+}
+
+.exchange__btn {
+  width: 50%;
+  font-family: inherit;
+  font-size: 1.1rem;
+  color: #fff;
+  padding: 15px;
+  background-color: #2ab664;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.exchange__btn:hover {
+  background-color: #2ecc71;
+}
+
+#base,
+#target {
+  display: none;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown__value {
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #2c3e50;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dropdown.open .dropdown__value,
+.dropdown__value:hover {
+  border: 1px solid #2ecc71;
+}
+
+.dropdown__value::before,
+.dropdown__value::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8px;
+  height: 2px;
+  border-radius: 1px;
+  top: 50%;
+  right: 12px;
+  background: #000;
+  transition: all 0.3s ease;
+}
+
+.dropdown__value::before {
+  margin-right: 4px;
+  transform: scale(0.96, 0.8) rotate(50deg);
+}
+
+.dropdown__value::after {
+  transform: scale(0.96, 0.8) rotate(-50deg);
+}
+
+.dropdown.open .dropdown__value::before {
+  transform: scale(0.96, 0.8) rotate(-50deg);
+}
+
+.dropdown.open .dropdown__value::after {
+  transform: scale(0.96, 0.8) rotate(50deg);
+}
+
+.dropdown__list {
+  position: absolute;
+  max-height: 140px;
+  min-height: 43px;
+  top: 40px;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  opacity: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  visibility: hidden;
+  transform-origin: 0 0;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.3s cubic-bezier(0.4, 0.6, 0.5, 1.32);
+  transform: translate(0, 5px);
+  z-index: 1;
+}
+
+.dropdown__list-item:hover {
+  background-color: #e6e6fa;
+}
+
+.dropdown.open .dropdown__list {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, 12px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.4, 0.6, 0.5, 1.32);
+}
+
+.dropdown__option-content {
+  font-size: 1rem;
+  color: #2c3e50;
+  cursor: pointer;
+  padding: 12px 10px;
+}
+
+.dropdown__option-content img {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.dropdown__option-content span {
+  font-weight: 600;
+}
